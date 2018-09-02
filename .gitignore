@@ -19,4 +19,6 @@ notebook/.ipynb_checkpoints
 
 # upload image
 sobel_main/static/*
-!/sobel_main/static/processed/.gitkeep
+!sobel_main/static/processed/
+sobel_main/static/processed/*
+!sobel_main/static/processed/.gitkeep

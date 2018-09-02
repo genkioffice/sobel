@@ -36,10 +36,22 @@ def send():
     if request.method == 'POST':
         img_file = request.files['img_file']
         filename = secure_filename(img_file.filename)
-        img_file.save(os.path.join(app.root_path,app.config['UPLOAD_FOLDER'], filename))
-        # img_url = '/static/' + filename
-        img_url = os.path.join(app.root_path,'static',filename)
+
+        # 画像をarrayに変える
+        stream = img_file.stream
+        img_array = np.asarray(bytearray(stream.read()), dtype=np.uint8)
+        img = cv2.imdecode(img_array, 1)
+        img_file = sob.sobel(img)
+        #保存
+
+
+        save_path = os.path.join(app.root_path,'static','processed',filename)
+        cv2.imwrite(save_path, img_file)
+
+        img_url = os.path.join(app.root_path,'static','processed',filename)
+        filename = 'processed/'+filename
         return render_template('index.html',img_url=img_url,filename=filename)
+        # return render_template('index.html')
     else:
         redirect(url_for('index'))
 

@@ -20,7 +20,7 @@
                     <button type="submit" class="btn btn-default">送信する</button>
                 </form>
                 {%if img_url %}
-                <p><img src="{{ url_for('static',filename=filename)}}"></p>
+                <p><img src="{{ url_for('static',filename=filename)}}" width="300"></p>
                 {% endif %}
             </div>
         </div>

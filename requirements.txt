@@ -1,12 +1,11 @@
 awscli
 click
-matplotlib
 jupyter
 notebook
 Sphinx
 flake8
-
-tensorflow
+flask
 numpy
 pandas
 pillow
+opencv-python

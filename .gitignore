@@ -16,3 +16,7 @@ data
 
 # notebook
 notebook/.ipynb_checkpoints
+
+# upload image
+sobel_main/static
+

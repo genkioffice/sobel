@@ -1,6 +1,8 @@
 # sobel
 
 this is a demo to confirm availability of docker, cookie-cutter and flask. In this app, we can understand how sobel filter affect on images.
+You can add your photo in the application, and you get an image processed by sobel filter.
+
 
 ## Setup development environment
 
@@ -11,11 +13,15 @@ We setup the development environment in a Docker container with the following co
 This command gets the resources for training and testing, and then prepares the Docker image for the experiments.
 After creating the Docker image, you run the following command.
 
-- `make create-container`
+## Easiest Instruction
 
-The above command creates a Docker container from the Docker image which we create with `make init`, and then
-login to the Docker container. Now we made the development environment. For create and evaluate the model,
-you run the following command.
+0. git clone this repository
+1. make init
+2. docker run -it --rm -p 8888:5000 -v $PWD:/work sobel-image
+3. open "http://0.0.0.0:8888/" in your browser
+
+
+
 
 ## Usage
 
@@ -66,3 +72,8 @@ access the Jupyter Notebook service in http://localhost:8888.
 # Credits
 
 This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [cookiecutter-docker-science](https://docker-science.github.io/) project template.
+
+# notice
+
+This repository is a reproduction of the content of 2018 summer internship. Thank you.
+

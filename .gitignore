@@ -9,7 +9,7 @@
 *.iml
 
 # model
-model
+model/__pycache__/*
 
 # data
 data
